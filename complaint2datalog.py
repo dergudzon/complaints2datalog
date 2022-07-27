@@ -30,10 +30,7 @@ if __name__=="__main__":
 
     pin = pin_folder_to_pinata(config, args.datapath, config["PINATA_IPFS_DESTINATION_PATH"])
     
-    datalog_message = {
-        "ipfs": pin["IpfsHash"],
-        "model": config["MODEL"]
-    }
+    datalog_message = pin["IpfsHash"]
 
     try:
         data_str, res = send_datalog(config, datalog_message)
