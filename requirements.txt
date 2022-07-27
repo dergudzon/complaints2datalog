@@ -1,0 +1,4 @@
+robonomics-interface==1.0.4
+substrate-interface==1.2.5
+pinatapy-vourhey==0.1.6
+requests

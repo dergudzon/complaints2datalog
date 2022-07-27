@@ -1,0 +1,10 @@
+{
+    "username": "Name from telegram", 
+    "message": "Message text", 
+    "timestamp": "1658811905", 
+    "geo": "55.235368,61.384797", 
+    "images": [
+        "img1.png", 
+        "img2.jpg"
+    ]
+}
