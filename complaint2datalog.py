@@ -11,11 +11,10 @@ def pin_folder_to_pinata(config, path, ipfs_destination_path):
 
 
 def send_datalog(config, datalog_message):
-    data_str = json.dumps(datalog_message)
     account = Account(remote_ws=config['ROBONOMICS_ENDPOINT'], seed=config['MNEMONIC'])
     datalog_rws = Datalog(account, rws_sub_owner=config["SUBSCRIPTION_OWNER"])
-    res = datalog_rws.record(data_str)
-    return (data_str, res)
+    res = datalog_rws.record(datalog_message)
+    return (datalog_message, res)
 
 
 if __name__=="__main__":
@@ -31,7 +30,7 @@ if __name__=="__main__":
     pin = pin_folder_to_pinata(config, args.datapath, config["PINATA_IPFS_DESTINATION_PATH"])
     
     datalog_message = pin["IpfsHash"]
-
+    
     try:
         data_str, res = send_datalog(config, datalog_message)
         print(data_str, res)
